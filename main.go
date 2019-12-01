@@ -45,6 +45,7 @@ func main() {
 
 	r.HandleFunc("/items", routes.ListItemsRoute(provider)).Methods("GET")
 	r.HandleFunc("/order", routes.AddOrderRoute(provider)).Methods("POST")
+	r.HandleFunc("/order", routes.ListOrderRoute(provider)).Methods("GET")
 
 	port, exists := os.LookupEnv("WEB_PORT")
 	if !exists {
